@@ -1,0 +1,70 @@
+prototype(UpAssist.Neos.News:PrimaryContent).Article {
+	@position = 'start'
+	condition = ${q(documentNode).is('[instanceof UpAssist.Neos.News:Article]')}
+	type = 'UpAssist.Neos.News:Article'
+}
+
+prototype(UpAssist.Neos.News:Article) {
+	templatePath = 'resource://UpAssist.Neos.News/Private/Templates/DocumentTypes/Article.html'
+
+	node = ${node}
+	title = ${q(node).property('title')}
+	publicationDate = ${q(node).property('publicationDate')}
+
+	breadcrumbs = UpAssist.Neos.News:BreadcrumbMenu
+
+	main = TYPO3.Neos:ContentCollection {
+		nodePath = 'main'
+	}
+
+	shareLinks = TYPO3.TypoScript:RawArray {
+		@override.link = TYPO3.Neos:NodeUri {
+			absolute = TRUE
+		}
+
+		attributes = TYPO3.TypoScript:Attributes {
+			class = TYPO3.TypoScript:RawArray {
+				identifier = 'news-share-links'
+				display = 'list-inline'
+			}
+		}
+
+		links = TYPO3.TypoScript:RawArray {
+			twitter = TYPO3.TypoScript:Tag {
+				tagName = 'a'
+				attributes.href = ${'https://twitter.com/home?status=' + link}
+				content = '<i class="fa fa-twitter fa-lg"></i>'
+			}
+
+			facebook = TYPO3.TypoScript:Tag {
+				tagName = 'a'
+				attributes.href = ${'https://www.facebook.com/sharer/sharer.php?u=' + link}
+				content = '<i class="fa fa-facebook fa-lg"></i>'
+			}
+
+			googlePlus = TYPO3.TypoScript:Tag {
+				tagName = 'a'
+				attributes.href = ${'https://plus.google.com/share?url=' + link}
+				content = '<i class="fa fa-google-plus fa-lg"></i>'
+			}
+
+			linkedIn = TYPO3.TypoScript:Tag {
+				tagName = 'a'
+				attributes.href = ${'https://www.linkedin.com/shareArticle?mini=true&url=' + link + '&title=&summary=&source='}
+				content = '<i class="fa fa-linkedin fa-lg"></i>'
+			}
+
+			pinterest = TYPO3.TypoScript:Tag {
+				tagName = 'a'
+				attributes.href = ${'https://pinterest.com/pin/create/button/?url=&media=' + link + '&description='}
+				content = '<i class="fa fa-pinterest fa-lg"></i>'
+			}
+
+			email = TYPO3.TypoScript:Tag {
+				tagName = 'a'
+				attributes.href = ${'mailto:?&subject=&body=' + link}
+				content = '<i class="fa fa-paper-plane fa-lg"></i>'
+			}
+		}
+	}
+}

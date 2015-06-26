@@ -1,0 +1,29 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+
+<article class="news-article">
+	<header>
+		<neos:contentElement.wrap node="{node}">
+			<h1>{neos:contentElement.editable(property: 'title')}</h1>
+		</neos:contentElement.wrap>
+	</header>
+	<div class="content">
+		{main -> f:format.raw()}
+		<br />
+		<a href="javascript:window.history.back();" >
+			<span class="fa-stack">
+			  <i class="fa fa-circle fa-stack-2x"></i>
+			  <i class="fa fa-angle-left fa-inverse fa-stack-1x"></i>
+			</span> terug
+		</a>
+	</div>
+	<footer>
+		<div class="news-meta">
+			<p>Gepubliceerd op {publicationDate -> f:format.date(format:'d-m-Y')}</p>
+		</div>
+		<ul{shareLinks.attributes -> f:format.raw()}>
+			<f:for each="{shareLinks.links}" as="link">
+				<li>{link -> f:format.raw()}</li>
+			</f:for>
+		</ul>
+	</footer>
+</article>

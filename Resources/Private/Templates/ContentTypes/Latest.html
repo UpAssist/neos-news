@@ -1,0 +1,23 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+<f:if condition="{items}">
+	<f:then>
+		<ul class="no-bullet latest-news">
+			{items -> f:format.raw()}
+		</ul>
+	</f:then>
+	<f:else>
+		<p>Sorry, we couldn't find any news.</p>
+	</f:else>
+</f:if>
+
+<f:section name="item">
+	<li>
+		<strong>{node.properties.publicationDate -> f:format.date(format: 'd-m-Y')}</strong> {node.properties.title} &mdash; {intro -> f:format.raw()}
+		<neos:link.node node="{node}" class="latest-news-readmore">
+			<span class="fa-stack">
+			  <i class="fa fa-circle fa-stack-2x"></i>
+			  <i class="fa fa-angle-right fa-inverse fa-stack-1x"></i>
+			</span>
+		</neos:link.node>
+	</li>
+</f:section>

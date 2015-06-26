@@ -1,0 +1,8 @@
+---
+
+'UpAssist.Neos.News:Latest':
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
+  ui:
+    group: 'news'
+    label: 'Latest News'

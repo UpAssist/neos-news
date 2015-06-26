@@ -1,0 +1,15 @@
+prototype(UpAssist.Neos.News:Latest) {
+	templatePath = 'resource://UpAssist.Neos.News/Private/Templates/ContentTypes/Latest.html'
+
+	items = TYPO3.TypoScript:Collection {
+		collection = ${q(site).find('[instanceof UpAssist.Neos.News:Article]').slice(0, 4)}
+		itemName = 'node'
+		itemRenderer = TYPO3.TypoScript:Template {
+			templatePath = 'resource://UpAssist.Neos.News/Private/Templates/ContentTypes/Latest.html'
+			sectionName = 'item'
+			node = ${node}
+			showMoreNewsButton = TRUE
+			intro = ${String.crop(String.stripTags(q(node).find('[instanceof TYPO3.Neos.NodeTypes:TextMixin]').first().property('text')), 150, '&hellip;')}
+		}
+	}
+}

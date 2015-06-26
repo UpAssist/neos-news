@@ -1,0 +1,47 @@
+'UpAssist.Neos.News:Document':
+  abstract: TRUE
+  superTypes:
+    'TYPO3.Neos:Document': TRUE
+  ui:
+    group: 'news'
+
+'UpAssist.Neos.News:Article':
+  superTypes:
+    'UpAssist.Neos.News:Document': TRUE
+    'TYPO3.Neos.NodeTypes:TitleMixin': TRUE
+    'TYPO3.Neos.NodeTypes:ImageMixin': TRUE
+  ui:
+    label: 'News'
+    icon: 'icon-file-text-alt'
+  childNodes:
+    main:
+      type: 'TYPO3.Neos:ContentCollection'
+  properties:
+    _hiddenInIndex:
+      defaultValue: FALSE
+    publicationDate:
+      type: DateTime
+      ui:
+        label: 'Publication Date'
+        inspector:
+          group: 'document'
+          editorOptions:
+            format: 'd-m-Y'
+      validation:
+        'TYPO3.Neos/Validation/NotEmptyValidator': []
+        'TYPO3.Neos/Validation/DateTimeValidator': []
+      search:
+        elasticSearchMapping:
+          type: date
+          include_in_all: false
+          format: 'date_time_no_millis'
+        indexing: '${(node.properties.publicationDate ? Date.format(node.properties.publicationDate, "Y-m-d\TH:i:sP") : null)}'
+
+'UpAssist.Neos.News:Index':
+  superTypes:
+    'UpAssist.Neos.News:Document': TRUE
+  ui:
+    label: 'News Index'
+  properties:
+    title:
+      defaultValue: 'News'
