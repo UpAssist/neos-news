@@ -25,6 +25,21 @@ prototype(UpAssist.Neos.News:Index) {
 		}
 
 		@process.wrap = ${'<ul class="news-items">' + value + '</ul>'}
+		@cache {
+			mode = 'cached'
+			entryIdentifier {
+				documentNode = ${documentNode}
+				node = ${node}
+			}
+			context {
+				1 = 'node'
+				2 = 'documentNode'
+				3 = 'site'
+			}
+			entryTags {
+				1 = 'UpAssist.Neos.News:Index'
+			}
+		}
 	}
 
 	archiveMenu = TYPO3.Neos:Menu {
