@@ -1,9 +1,9 @@
+---
+
 'UpAssist.Neos.News:Document':
   abstract: TRUE
   superTypes:
     'TYPO3.Neos:Document': TRUE
-  ui:
-    group: 'news'
 
 'UpAssist.Neos.News:Article':
   superTypes:

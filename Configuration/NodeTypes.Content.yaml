@@ -4,5 +4,4 @@
   superTypes:
     'TYPO3.Neos:Content': TRUE
   ui:
-    group: 'news'
     label: 'Latest News'
