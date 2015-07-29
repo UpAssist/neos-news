@@ -26,7 +26,7 @@
         inspector:
           group: 'document'
           editorOptions:
-            format: 'd-m-Y'
+            format: 'd-m-Y H:i'
       validation:
         'TYPO3.Neos/Validation/NotEmptyValidator': []
         'TYPO3.Neos/Validation/DateTimeValidator': []
