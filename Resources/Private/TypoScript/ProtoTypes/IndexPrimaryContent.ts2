@@ -1,4 +1,4 @@
-prototype(UpAssist.Neos.News:PrimaryContent).Index {
+prototype(TYPO3.Neos:PrimaryContent).Index {
 	@position = 'start'
 	condition = ${q(documentNode).is('[instanceof UpAssist.Neos.News:Index]')}
 	type = 'UpAssist.Neos.News:Index'

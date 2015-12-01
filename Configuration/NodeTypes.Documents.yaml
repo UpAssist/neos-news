@@ -9,7 +9,6 @@
   superTypes:
     'UpAssist.Neos.News:Document': TRUE
     'TYPO3.Neos.NodeTypes:TitleMixin': TRUE
-    'TYPO3.Neos.NodeTypes:ImageMixin': TRUE
   ui:
     label: 'News'
     icon: 'icon-file-text-alt'
@@ -40,8 +39,12 @@
 'UpAssist.Neos.News:Index':
   superTypes:
     'UpAssist.Neos.News:Document': TRUE
+  childNodes:
+    main:
+      type: 'TYPO3.Neos:ContentCollection'
   ui:
     label: 'News Index'
+    icon: 'icon-list'
   properties:
     title:
       defaultValue: 'News'

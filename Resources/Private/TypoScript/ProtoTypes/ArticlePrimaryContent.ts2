@@ -1,4 +1,4 @@
-prototype(UpAssist.Neos.News:PrimaryContent).Article {
+prototype(TYPO3.Neos:PrimaryContent).Article {
 	@position = 'start'
 	condition = ${q(documentNode).is('[instanceof UpAssist.Neos.News:Article]')}
 	type = 'UpAssist.Neos.News:Article'
