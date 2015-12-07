@@ -14,7 +14,7 @@ prototype(UpAssist.Neos.News:Index) {
 	}
 
 	items = TYPO3.TypoScript:Collection {
-		collection = ${q(documentNode).find('[instanceof UpAssist.Neos.News:Article]')}
+		collection = ${q(documentNode).find('[instanceof UpAssist.Neos.News:Article]') ? q(documentNode).find('[instanceof UpAssist.Neos.News:Article]').sort('publicationDate', 'DESC') : null}
 		itemName = 'node'
 		itemRenderer = TYPO3.TypoScript:Template {
 			templatePath = 'resource://UpAssist.Neos.News/Private/Templates/ContentTypes/Latest.html'
