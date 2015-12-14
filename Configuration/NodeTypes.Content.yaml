@@ -5,3 +5,22 @@
     'TYPO3.Neos:Content': TRUE
   ui:
     label: 'Latest News'
+    inspector:
+      groups:
+        options:
+          label: 'Options'
+  properties:
+    showMoreNewsButton:
+      type: boolean
+      ui:
+        label: 'Show more news button'
+        reloadIfChanged: true
+        inspector:
+          group: 'options'
+    newsPage:
+      type: reference
+      ui:
+        label: 'News page'
+        reloadIfChanged: true
+        inspector:
+          group: 'options'
