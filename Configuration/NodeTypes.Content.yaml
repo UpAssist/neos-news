@@ -3,6 +3,7 @@
 'UpAssist.Neos.News:Latest':
   superTypes:
     'TYPO3.Neos:Content': TRUE
+    'TYPO3.Neos.NodeTypes:TitleMixin': true
   ui:
     label: 'Latest News'
     inspector:

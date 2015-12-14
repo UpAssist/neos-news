@@ -3,6 +3,7 @@ prototype(UpAssist.Neos.News:Latest) {
 
     showMoreNewsButton = ${q(node).property('showMoreNewsButton')}
     newsPage = ${q(node).property('newsPage')}
+    title = ${q(node).property('title')}
 
     items = TYPO3.TypoScript:Collection {
         collection = ${q(site).find('[instanceof UpAssist.Neos.News:Article]') ? q(site).find('[instanceof UpAssist.Neos.News:Article]').sort('publicationDate', 'DESC').slice(0, 4) : null}
