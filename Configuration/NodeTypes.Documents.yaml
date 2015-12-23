@@ -1,50 +1,47 @@
----
 
 'UpAssist.Neos.News:Document':
-  abstract: TRUE
+  abstract: true
   superTypes:
-    'TYPO3.Neos:Document': TRUE
-
+    'TYPO3.Neos:Document': '1'
 'UpAssist.Neos.News:Article':
   superTypes:
-    'UpAssist.Neos.News:Document': TRUE
-    'TYPO3.Neos.NodeTypes:TitleMixin': TRUE
+    'UpAssist.Neos.News:Document': '1'
+    'TYPO3.Neos.NodeTypes:TitleMixin': '1'
   ui:
-    label: 'News'
-    icon: 'icon-file-text-alt'
+    label: News
+    icon: icon-file-text-alt
   childNodes:
     main:
       type: 'TYPO3.Neos:ContentCollection'
   properties:
     _hiddenInIndex:
-      defaultValue: FALSE
+      defaultValue: false
     publicationDate:
       type: DateTime
       ui:
         label: 'Publication Date'
         inspector:
-          group: 'document'
+          group: document
           editorOptions:
             format: 'd-m-Y H:i'
       validation:
-        'TYPO3.Neos/Validation/NotEmptyValidator': []
-        'TYPO3.Neos/Validation/DateTimeValidator': []
+        TYPO3.Neos/Validation/NotEmptyValidator: {  }
+        TYPO3.Neos/Validation/DateTimeValidator: {  }
       search:
         elasticSearchMapping:
           type: date
           include_in_all: false
-          format: 'date_time_no_millis'
+          format: date_time_no_millis
         indexing: '${(node.properties.publicationDate ? Date.format(node.properties.publicationDate, "Y-m-d\TH:i:sP") : null)}'
-
 'UpAssist.Neos.News:Index':
   superTypes:
-    'UpAssist.Neos.News:Document': TRUE
+    'UpAssist.Neos.News:Document': '1'
   childNodes:
     main:
       type: 'TYPO3.Neos:ContentCollection'
   ui:
     label: 'News Index'
-    icon: 'icon-list'
+    icon: icon-list
   properties:
     title:
-      defaultValue: 'News'
+      defaultValue: News

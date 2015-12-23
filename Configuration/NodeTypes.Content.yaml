@@ -1,15 +1,14 @@
----
 
 'UpAssist.Neos.News:Latest':
   superTypes:
-    'TYPO3.Neos:Content': TRUE
-    'TYPO3.Neos.NodeTypes:TitleMixin': true
+    'TYPO3.Neos:Content': '1'
+    'TYPO3.Neos.NodeTypes:TitleMixin': '1'
   ui:
     label: 'Latest News'
     inspector:
       groups:
         options:
-          label: 'Options'
+          label: Options
   properties:
     showMoreNewsButton:
       type: boolean
@@ -17,11 +16,11 @@
         label: 'Show more news button'
         reloadIfChanged: true
         inspector:
-          group: 'options'
+          group: options
     newsPage:
       type: reference
       ui:
         label: 'News page'
         reloadIfChanged: true
         inspector:
-          group: 'options'
+          group: options
