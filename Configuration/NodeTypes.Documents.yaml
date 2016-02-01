@@ -3,7 +3,7 @@
 'UpAssist.Neos.News:Document':
   abstract: TRUE
   superTypes:
-    'TYPO3.Neos:Document': TRUE
+    'TYPO3.Neos:Document': true
 
 'UpAssist.Neos.News:Article':
   superTypes:
@@ -35,6 +35,9 @@
           include_in_all: false
           format: 'date_time_no_millis'
         indexing: '${(node.properties.publicationDate ? Date.format(node.properties.publicationDate, "Y-m-d\TH:i:sP") : null)}'
+  postprocessors:
+    'Postprocessor':
+      postprocessor: 'UpAssist\Neos\News\NodeTypePostprocessor\ArticleNodeTypePostprocessor'
 
 'UpAssist.Neos.News:Index':
   superTypes:
