@@ -1,54 +1,43 @@
 prototype(TYPO3.Neos:PrimaryContent).Index {
-	@position = 'start'
-	condition = ${q(documentNode).is('[instanceof UpAssist.Neos.News:Index]')}
-	type = 'UpAssist.Neos.News:Index'
+    @position = 'start'
+    condition = ${q(documentNode).is('[instanceof UpAssist.Neos.News:Index]')}
+    type = 'UpAssist.Neos.News:Index'
 }
 
 prototype(UpAssist.Neos.News:Index) {
-	templatePath = 'resource://UpAssist.Neos.News/Private/Templates/DocumentTypes/Index.html'
+    templatePath = 'resource://UpAssist.Neos.News/Private/Templates/DocumentTypes/Index.html'
 
-	breadcrumbs = UpAssist.Neos.News:BreadcrumbMenu
+    breadcrumbs = UpAssist.Neos.News:BreadcrumbMenu
 
-	main = TYPO3.Neos:ContentCollection {
-		nodePath = 'main'
-	}
+    main = TYPO3.Neos:ContentCollection {
+        nodePath = 'main'
+    }
 
-	items = TYPO3.TypoScript:Collection {
-		collection = ${q(documentNode).find('[instanceof UpAssist.Neos.News:Article]') ? q(documentNode).find('[instanceof UpAssist.Neos.News:Article]').sort('publicationDate', 'DESC') : null}
-		itemName = 'node'
-		itemRenderer = TYPO3.TypoScript:Template {
-			templatePath = 'resource://UpAssist.Neos.News/Private/Templates/ContentTypes/Latest.html'
-			sectionName = 'item'
-			node = ${node}
-			showMoreNewsButton = TRUE
-			intro = ${String.crop(String.stripTags(q(node).find('[instanceof TYPO3.Neos.NodeTypes:TextMixin]').first().property('text')), 150, '&hellip;')}
-		}
+    hasItems = ${q(documentNode).find('[instanceof UpAssist.Neos.News:Article]').count()}
 
-		@process.wrap = ${'<ul class="news-items">' + value + '</ul>'}
-		@cache {
-			mode = 'cached'
-			entryIdentifier {
-				documentNode = ${documentNode}
-				node = ${node}
-			}
-			context {
-				1 = 'node'
-				2 = 'documentNode'
-				3 = 'site'
-			}
-			entryTags {
-				1 = 'UpAssist.Neos.News:Index'
-			}
-		}
-	}
+    items = TYPO3.TypoScript:Collection {
+        collection = ${q(documentNode).find('[instanceof UpAssist.Neos.News:Article]').count() ? q(documentNode).find('[instanceof UpAssist.Neos.News:Article]').sort('publicationDate', 'DESC') : null}
+        itemName = 'node'
+        itemRenderer = TYPO3.TypoScript:Template {
+        templatePath = 'resource://UpAssist.Neos.News/Private/Templates/ContentTypes/Latest.html'
+        sectionName = 'item'
+        node = ${node}
+        showMoreNewsButton = TRUE
+        intro = ${String.crop(String.stripTags(q(node).find('[instanceof TYPO3.Neos.NodeTypes:TextMixin]').first().property('text')), 150, '&hellip;')}
+    }
 
-	archiveMenu = TYPO3.Neos:Menu {
-		startingPoint = ${site}
-		maximumLevels = 99
-		filter = 'UpAssist.Neos.News:Index'
-#		attributes.class.@process.nodeType >
-		attributes.class = TYPO3.TypoScript:RawArray {
-			type = 'news-archive-menu'
-		}
-	}
+    @process.wrap = ${'<ul class="news-items">' + value + '</ul>'}
+
+    @cache.entryTags {
+        1 = ${'NodeType_' + UpAssist.Neos.News:Article}
+    }
+
+    archiveMenu = TYPO3.Neos:Menu {
+        startingPoint = ${site}
+        maximumLevels = 99
+        filter = 'UpAssist.Neos.News:Index'
+        attributes.class = TYPO3.TypoScript:RawArray {
+            type = 'news-archive-menu'
+        }
+    }
 }

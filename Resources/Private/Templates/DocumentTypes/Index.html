@@ -1,6 +1,14 @@
 <section class="news-index collection">
-	{breadcrumbs -> f:format.raw()}
+    {breadcrumbs -> f:format.raw()}
 
-	{archiveMenu -> f:format.raw()}
-	{items -> f:format.raw()}
+    {archiveMenu -> f:format.raw()}
+
+    <f:if condition="{hasItems}">
+        <f:then>
+            {items -> f:format.raw()}
+        </f:then>
+        <f:else>
+            <p><f:translate id="no-news" package="UpAssist.Neos.News"/></p>
+        </f:else>
+    </f:if>
 </section>

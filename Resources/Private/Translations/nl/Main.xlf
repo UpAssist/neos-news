@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file original="" product-name="UpAssist.Neos.News" source-language="en" target-language="nl" datatype="plaintext">
+        <body>
+            <trans-unit id="no-news" xml:space="preserve">
+                <source>No news found</source>
+                <target>Geen nieuws gevonden</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
