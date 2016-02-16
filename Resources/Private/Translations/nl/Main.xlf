@@ -6,6 +6,14 @@
                 <source>No news found</source>
                 <target>Geen nieuws gevonden</target>
             </trans-unit>
+            <trans-unit id="latest.noNewsPageSet">
+                <source>Please select a news page in the inspector</source>
+                <target>U dient nog een pagina te selecteren in de inspector</target>
+            </trans-unit>
+            <trans-unit id="latest.moreNewsPage">
+                <source>More News</source>
+                <target>Meer nieuws</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

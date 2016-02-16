@@ -1,4 +1,5 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
+
 <f:if condition="{items}">
     <f:then>
         <ul class="no-bullet latest-news">
@@ -8,6 +9,17 @@
     <f:else>
         <p><f:translate id="no-news" package="UpAssist.Neos.News"/></p>
     </f:else>
+</f:if>
+
+<f:if condition="{showMoreNewsButton}">
+    <f:if condition="{newsPage}">
+        <f:then>
+            <neos:link.node node="{newsPage}" class="button">{f:translate(id:'latest.moreNewsPage', package:'UpAssist.Neos.News')}</neos:link.node>
+        </f:then>
+        <f:else>
+            <p>{f:translate(id:'latest.noNewsPageSet', package:'UpAssist.Neos.News')}</p>
+        </f:else>
+    </f:if>
 </f:if>
 
 <f:section name="item">

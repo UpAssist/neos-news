@@ -5,6 +5,12 @@
             <trans-unit id="no-news" xml:space="preserve">
                 <source>No news found</source>
             </trans-unit>
+            <trans-unit id="latest.noNewsPageSet">
+                <source>Please select a news page in the inspector</source>
+            </trans-unit>
+            <trans-unit id="latest.moreNewsPage">
+                <source>More News</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>
