@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file original="" product-name="UpAssist.Neos.News" source-language="en" datatype="plaintext">
+        <body>
+            <trans-unit id="ui.label" xml:space="preserve">
+                <source>Latest News</source>
+            </trans-unit>
+            <trans-unit id="groups.options" xml:space="preserve">
+                <source>Options</source>
+            </trans-unit>
+            <trans-unit id="properties.numberOfItemsToShow" xml:space="preserve">
+                <source>Number of items to show</source>
+            </trans-unit>
+            <trans-unit id="properties.showMoreNewsButton" xml:space="preserve">
+                <source>Show more news button</source>
+            </trans-unit>
+            <trans-unit id="properties.newsPage" xml:space="preserve">
+                <source>News page</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

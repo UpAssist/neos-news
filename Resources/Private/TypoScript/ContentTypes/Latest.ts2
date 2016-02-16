@@ -4,9 +4,10 @@ prototype(UpAssist.Neos.News:Latest) {
     showMoreNewsButton = ${q(node).property('showMoreNewsButton')}
     newsPage = ${q(node).property('newsPage')}
     title = ${q(node).property('title')}
+    numberOfItemsToShow = ${String.toInteger(q(node).property('numberOfItemsToShow'))}
 
     items = TYPO3.TypoScript:Collection {
-        collection = ${q(site).find('[instanceof UpAssist.Neos.News:Article]').count() ? q(site).find('[instanceof UpAssist.Neos.News:Article]').sort('publicationDate', 'DESC').slice(0, 4) : null}
+        collection = ${q(site).find('[instanceof UpAssist.Neos.News:Article]').count() ? q(site).find('[instanceof UpAssist.Neos.News:Article]').sort('publicationDate', 'DESC').slice(0, this.numberOfItemsToShow) : null}
         itemName = 'node'
         iterationName = 'iterator'
         itemRenderer = TYPO3.TypoScript:Template {
@@ -18,7 +19,13 @@ prototype(UpAssist.Neos.News:Latest) {
         }
     }
 
-    @cache.entryTags {
-        1 = ${'NodeType_' + UpAssist.Neos.News:Article}
+    @cache {
+        mode = 'cached'
+        entryIdentifier {
+            1 = ${node.identifier}
+        }
+        entryTags {
+            1 = 'NodeType_UpAssist.Neos.News:Article'
+        }
     }
 }
