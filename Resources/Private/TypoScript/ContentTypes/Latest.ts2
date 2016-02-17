@@ -20,7 +20,11 @@ prototype(UpAssist.Neos.News:Latest) {
     }
 
     @cache {
-        mode = 'cached'
+        mode = 'uncached'
+        context {
+            1 = 'site'
+            2 = 'node'
+        }
         entryIdentifier {
             1 = ${node.identifier}
         }

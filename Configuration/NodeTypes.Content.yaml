@@ -16,17 +16,20 @@
       defaultValue: 5
       ui:
         label: i18n
+        reloadIfChanged: true
         inspector:
           group: 'options'
     showMoreNewsButton:
       type: boolean
       ui:
         label: i18n
+        reloadIfChanged: true
         inspector:
           group: 'options'
     newsPage:
       type: reference
       ui:
         label: i18n
+        reloadIfChanged: true
         inspector:
           group: 'options'
