@@ -2,11 +2,11 @@
 'UpAssist.Neos.News:Document':
   abstract: true
   superTypes:
-    'TYPO3.Neos:Document': '1'
+    'TYPO3.Neos:Document': true
 'UpAssist.Neos.News:Article':
   superTypes:
-    'UpAssist.Neos.News:Document': '1'
-    'TYPO3.Neos.NodeTypes:TitleMixin': '1'
+    'UpAssist.Neos.News:Document': true
+    'TYPO3.Neos.NodeTypes:TitleMixin': true
   ui:
     label: News
     icon: icon-file-text-alt
@@ -38,7 +38,7 @@
       postprocessor: UpAssist\Neos\News\NodeTypePostprocessor\ArticleNodeTypePostprocessor
 'UpAssist.Neos.News:Index':
   superTypes:
-    'UpAssist.Neos.News:Document': '1'
+    'UpAssist.Neos.News:Document': true
   childNodes:
     main:
       type: 'TYPO3.Neos:ContentCollection'
