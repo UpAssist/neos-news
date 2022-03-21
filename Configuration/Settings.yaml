@@ -1,9 +1,6 @@
 
 Neos:
   Neos:
-    typoScript:
-      autoInclude:
-        UpAssist.Neos.News: true
     userInterface:
       translation:
         autoInclude:
@@ -12,3 +9,6 @@ Neos:
             - Inspector
             - Modules
             - 'NodeTypes/*'
+    fusion:
+      autoInclude:
+        UpAssist.Neos.News: true
