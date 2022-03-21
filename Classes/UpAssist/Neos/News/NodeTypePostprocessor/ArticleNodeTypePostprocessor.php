@@ -12,19 +12,19 @@ namespace UpAssist\Neos\News\NodeTypePostprocessor;
  *                                                                        */
 
 use \Neos\Flow\Annotations as Flow;
-use \TYPO3\TYPO3CR\Domain\Model\NodeType;
+use \Neos\ContentRepository\Domain\Model\NodeType;
 
 /**
  * This Processor updates the PluginViews NodeType with the existing
  * Plugins and it's corresponding available Views
  */
-class ArticleNodeTypePostprocessor implements \TYPO3\TYPO3CR\NodeTypePostprocessor\NodeTypePostprocessorInterface
+class ArticleNodeTypePostprocessor implements \Neos\ContentRepository\NodeTypePostprocessor\NodeTypePostprocessorInterface
 {
 
     /**
      * Returns the processed Configuration
      *
-     * @param \TYPO3\TYPO3CR\Domain\Model\NodeType $nodeType (uninitialized) The node type to process
+     * @param \Neos\ContentRepository\Domain\Model\NodeType $nodeType (uninitialized) The node type to process
      * @param array $configuration input configuration
      * @param array $options The processor options
      * @return void
