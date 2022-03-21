@@ -4,11 +4,11 @@ namespace UpAssist\Neos\News\Eel\FlowQuery\Operations;
 /**
  * @see https://github.com/Weissheiten/Weissheiten.Neos.News/blob/master/Classes/Weissheiten/Neos/News/TypoScript/Eel/FlowQueryOperations/SortOperation.php
  */
-use TYPO3\Eel\FlowQuery\FlowQueryException;
-use TYPO3\Eel\FlowQuery\Operations\AbstractOperation;
+use Neos\Eel\FlowQuery\FlowQueryException;
+use Neos\Eel\FlowQuery\Operations\AbstractOperation;
 use Neos\Flow\Annotations as Flow;
 use TYPO3\TYPO3CR\Domain\Model\NodeInterface;
-use TYPO3\Eel\FlowQuery\FlowQuery;
+use Neos\Eel\FlowQuery\FlowQuery;
 use TYPO3\TYPO3CR\Domain\Model\Node;
 
 /**
