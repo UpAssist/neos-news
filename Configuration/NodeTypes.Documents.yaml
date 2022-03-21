@@ -3,7 +3,7 @@
 'UpAssist.Neos.News:Document':
   abstract: TRUE
   superTypes:
-    'TYPO3.Neos:Document': true
+    'Neos.Neos:Document': true
 
 'UpAssist.Neos.News:Article':
   superTypes:
@@ -14,7 +14,7 @@
     icon: 'icon-file-text-alt'
   childNodes:
     main:
-      type: 'TYPO3.Neos:ContentCollection'
+      type: 'Neos.Neos:ContentCollection'
   properties:
     _hiddenInIndex:
       defaultValue: FALSE
@@ -27,8 +27,8 @@
           editorOptions:
             format: 'd-m-Y H:i'
       validation:
-        'TYPO3.Neos/Validation/NotEmptyValidator': []
-        'TYPO3.Neos/Validation/DateTimeValidator': []
+        'Neos.Neos/Validation/NotEmptyValidator': []
+        'Neos.Neos/Validation/DateTimeValidator': []
       search:
         elasticSearchMapping:
           type: date
@@ -44,7 +44,7 @@
     'UpAssist.Neos.News:Document': TRUE
   childNodes:
     main:
-      type: 'TYPO3.Neos:ContentCollection'
+      type: 'Neos.Neos:ContentCollection'
   ui:
     label: 'News Index'
     icon: 'icon-list'

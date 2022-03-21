@@ -1,9 +1,14 @@
-TYPO3:
+
+Neos:
   Neos:
     typoScript:
       autoInclude:
-        'UpAssist.Neos.News': TRUE
+        UpAssist.Neos.News: true
     userInterface:
       translation:
         autoInclude:
-          'UpAssist.Neos.News': ['Main', 'Inspector', 'Modules', 'NodeTypes/*']
+          UpAssist.Neos.News:
+            - Main
+            - Inspector
+            - Modules
+            - 'NodeTypes/*'
