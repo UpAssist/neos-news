@@ -8,7 +8,7 @@
 'UpAssist.Neos.News:Article':
   superTypes:
     'UpAssist.Neos.News:Document': TRUE
-    'TYPO3.Neos.NodeTypes:TitleMixin': TRUE
+    'Neos.NodeTypes:TitleMixin': TRUE
   ui:
     label: 'News'
     icon: 'icon-file-text-alt'
