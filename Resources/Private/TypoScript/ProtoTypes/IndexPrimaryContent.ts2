@@ -1,4 +1,4 @@
-prototype(TYPO3.Neos:PrimaryContent).Index {
+prototype(Neos.Neos:PrimaryContent).Index {
     @position = 'start'
     condition = ${q(documentNode).is('[instanceof UpAssist.Neos.News:Index]')}
     type = 'UpAssist.Neos.News:Index'
@@ -9,7 +9,7 @@ prototype(UpAssist.Neos.News:Index) {
 
     breadcrumbs = UpAssist.Neos.News:BreadcrumbMenu
 
-    main = TYPO3.Neos:ContentCollection {
+    main = Neos.Neos:ContentCollection {
         nodePath = 'main'
     }
 
@@ -32,7 +32,7 @@ prototype(UpAssist.Neos.News:Index) {
         1 = ${'NodeType_' + UpAssist.Neos.News:Article}
     }
 
-    archiveMenu = TYPO3.Neos:Menu {
+    archiveMenu = Neos.Neos:Menu {
         startingPoint = ${site}
         maximumLevels = 99
         filter = 'UpAssist.Neos.News:Index'

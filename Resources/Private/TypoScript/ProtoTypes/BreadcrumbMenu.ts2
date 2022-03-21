@@ -1,4 +1,4 @@
-prototype(UpAssist.Neos.News:BreadcrumbMenu) < prototype(TYPO3.Neos:BreadcrumbMenu) {
-	itemCollection = ${q(node).add(q(node).parents('[instanceof TYPO3.Neos:Document]').slice(0,-1)).get()}
+prototype(UpAssist.Neos.News:BreadcrumbMenu) < prototype(Neos.Neos:BreadcrumbMenu) {
+	itemCollection = ${q(node).add(q(node).parents('[instanceof Neos.Neos:Document]').slice(0,-1)).get()}
 	attributes.class = 'breadcrumbs'
 }

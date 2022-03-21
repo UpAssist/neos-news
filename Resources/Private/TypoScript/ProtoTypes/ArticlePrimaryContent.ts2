@@ -1,4 +1,4 @@
-prototype(TYPO3.Neos:PrimaryContent).Article {
+prototype(Neos.Neos:PrimaryContent).Article {
 	@position = 'start'
 	condition = ${q(documentNode).is('[instanceof UpAssist.Neos.News:Article]')}
 	type = 'UpAssist.Neos.News:Article'
@@ -13,12 +13,12 @@ prototype(UpAssist.Neos.News:Article) {
 
 	breadcrumbs = UpAssist.Neos.News:BreadcrumbMenu
 
-	main = TYPO3.Neos:ContentCollection {
+	main = Neos.Neos:ContentCollection {
 		nodePath = 'main'
 	}
 
 	shareLinks = Neos.Fusion:RawArray {
-		@override.link = TYPO3.Neos:NodeUri {
+		@override.link = Neos.Neos:NodeUri {
 			absolute = TRUE
 		}
 
