@@ -15,7 +15,7 @@ prototype(UpAssist.Neos.News:Latest) {
             sectionName = 'item'
             node = ${node}
             iterator = ${iterator}
-            intro = ${String.crop(String.stripTags(q(node).find('[instanceof TYPO3.Neos.NodeTypes:TextMixin]').first().property('text')), 150, '&hellip;')}
+            intro = ${String.crop(String.stripTags(q(node).find('[instanceof Neos.NodeTypes:TextMixin]').first().property('text')), 150, '&hellip;')}
         }
     }
 
