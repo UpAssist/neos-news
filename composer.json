@@ -9,5 +9,10 @@
         "psr-0": {
             "UpAssist\\Neos\\News": "Classes"
         }
+    },
+    "extra": {
+        "applied-flow-migrations": [
+            "TYPO3.Neos-20150303231600"
+        ]
     }
 }
