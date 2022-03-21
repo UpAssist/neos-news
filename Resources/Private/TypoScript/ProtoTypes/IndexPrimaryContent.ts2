@@ -15,10 +15,10 @@ prototype(UpAssist.Neos.News:Index) {
 
     hasItems = ${q(documentNode).find('[instanceof UpAssist.Neos.News:Article]').count()}
 
-    items = TYPO3.TypoScript:Collection {
+    items = Neos.Fusion:Collection {
         collection = ${q(documentNode).find('[instanceof UpAssist.Neos.News:Article]').count() ? q(documentNode).find('[instanceof UpAssist.Neos.News:Article]').sort('publicationDate', 'DESC') : null}
         itemName = 'node'
-        itemRenderer = TYPO3.TypoScript:Template {
+        itemRenderer = Neos.Fusion:Template {
         templatePath = 'resource://UpAssist.Neos.News/Private/Templates/ContentTypes/Latest.html'
         sectionName = 'item'
         node = ${node}
@@ -36,7 +36,7 @@ prototype(UpAssist.Neos.News:Index) {
         startingPoint = ${site}
         maximumLevels = 99
         filter = 'UpAssist.Neos.News:Index'
-        attributes.class = TYPO3.TypoScript:RawArray {
+        attributes.class = Neos.Fusion:RawArray {
             type = 'news-archive-menu'
         }
     }

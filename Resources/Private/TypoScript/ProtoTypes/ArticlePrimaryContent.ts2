@@ -17,50 +17,50 @@ prototype(UpAssist.Neos.News:Article) {
 		nodePath = 'main'
 	}
 
-	shareLinks = TYPO3.TypoScript:RawArray {
+	shareLinks = Neos.Fusion:RawArray {
 		@override.link = TYPO3.Neos:NodeUri {
 			absolute = TRUE
 		}
 
-		attributes = TYPO3.TypoScript:Attributes {
-			class = TYPO3.TypoScript:RawArray {
+		attributes = Neos.Fusion:Attributes {
+			class = Neos.Fusion:RawArray {
 				identifier = 'news-share-links'
 				display = 'list-inline'
 			}
 		}
 
-		links = TYPO3.TypoScript:RawArray {
-			twitter = TYPO3.TypoScript:Tag {
+		links = Neos.Fusion:RawArray {
+			twitter = Neos.Fusion:Tag {
 				tagName = 'a'
 				attributes.href = ${'https://twitter.com/home?status=' + link}
 				content = '<i class="fa fa-twitter fa-lg"></i>'
 			}
 
-			facebook = TYPO3.TypoScript:Tag {
+			facebook = Neos.Fusion:Tag {
 				tagName = 'a'
 				attributes.href = ${'https://www.facebook.com/sharer/sharer.php?u=' + link}
 				content = '<i class="fa fa-facebook fa-lg"></i>'
 			}
 
-			googlePlus = TYPO3.TypoScript:Tag {
+			googlePlus = Neos.Fusion:Tag {
 				tagName = 'a'
 				attributes.href = ${'https://plus.google.com/share?url=' + link}
 				content = '<i class="fa fa-google-plus fa-lg"></i>'
 			}
 
-			linkedIn = TYPO3.TypoScript:Tag {
+			linkedIn = Neos.Fusion:Tag {
 				tagName = 'a'
 				attributes.href = ${'https://www.linkedin.com/shareArticle?mini=true&url=' + link + '&title=&summary=&source='}
 				content = '<i class="fa fa-linkedin fa-lg"></i>'
 			}
 
-			pinterest = TYPO3.TypoScript:Tag {
+			pinterest = Neos.Fusion:Tag {
 				tagName = 'a'
 				attributes.href = ${'https://pinterest.com/pin/create/button/?url=&media=' + link + '&description='}
 				content = '<i class="fa fa-pinterest fa-lg"></i>'
 			}
 
-			email = TYPO3.TypoScript:Tag {
+			email = Neos.Fusion:Tag {
 				tagName = 'a'
 				attributes.href = ${'mailto:?&subject=&body=' + link}
 				content = '<i class="fa fa-paper-plane fa-lg"></i>'
