@@ -1,6 +1,6 @@
 {
     "name": "upassist/neos-news",
-    "type": "neos-flow-package",
+    "type": "neos-package",
     "description": "A simple news package for Neos",
     "require": {
         "neos/neos": "*"
