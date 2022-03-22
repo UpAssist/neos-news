@@ -1,13 +1,13 @@
 {
     "name": "upassist/neos-news",
-    "type": "typo3-flow-package",
+    "type": "neos-flow-package",
     "description": "A simple news package for Neos",
     "require": {
-        "neos/neos": "~3.0"
+        "neos/neos": "*"
     },
     "autoload": {
-        "psr-0": {
-            "UpAssist\\Neos\\News": "Classes"
+        "psr-4": {
+            "UpAssist\\Neos\\News\\": "Classes"
         }
     },
     "extra": {
