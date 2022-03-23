@@ -1,0 +1,33 @@
+'UpAssist.Neos.News:Article':
+  superTypes:
+    'UpAssist.Neos.News:Document': true
+    'Neos.NodeTypes:TitleMixin': true
+  ui:
+    label: News
+    icon: icon-file-text-alt
+  childNodes:
+    main:
+      type: 'Neos.Neos:ContentCollection'
+  properties:
+    _hiddenInIndex:
+      defaultValue: false
+    publicationDate:
+      type: DateTime
+      ui:
+        label: 'Publication Date'
+        inspector:
+          group: document
+          editorOptions:
+            format: 'd-m-Y H:i'
+      validation:
+        Neos.Neos/Validation/NotEmptyValidator: {  }
+        Neos.Neos/Validation/DateTimeValidator: {  }
+      search:
+        elasticSearchMapping:
+          type: date
+          include_in_all: false
+          format: date_time_no_millis
+        indexing: '${(node.properties.publicationDate ? Date.format(node.properties.publicationDate, "Y-m-d\TH:i:sP") : null)}'
+  postprocessors:
+    Postprocessor:
+      postprocessor: UpAssist\Neos\News\NodeTypePostprocessor\ArticleNodeTypePostprocessor

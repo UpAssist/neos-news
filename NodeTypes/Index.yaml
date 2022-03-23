@@ -1,0 +1,12 @@
+'UpAssist.Neos.News:Index':
+  superTypes:
+    'UpAssist.Neos.News:Document': true
+  childNodes:
+    main:
+      type: 'Neos.Neos:ContentCollection'
+  ui:
+    label: 'News Index'
+    icon: icon-list
+  properties:
+    title:
+      defaultValue: News
