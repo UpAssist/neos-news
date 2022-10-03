@@ -1,4 +1,4 @@
-prototype(UpAssist.Neos.News:Latest) {
+prototype(UpAssist.Neos.News:Latest) < prototype(Neos.Fusion:Template) {
     templatePath = 'resource://UpAssist.Neos.News/Private/Templates/ContentTypes/Latest.html'
 
     showMoreNewsButton = ${q(node).property('showMoreNewsButton')}

@@ -4,7 +4,7 @@ prototype(Neos.Neos:PrimaryContent).Index {
     type = 'UpAssist.Neos.News:Index'
 }
 
-prototype(UpAssist.Neos.News:Index) {
+prototype(UpAssist.Neos.News:Index) < prototype(Neos.Fusion:Template) {
     templatePath = 'resource://UpAssist.Neos.News/Private/Templates/DocumentTypes/Index.html'
 
     breadcrumbs = UpAssist.Neos.News:BreadcrumbMenu

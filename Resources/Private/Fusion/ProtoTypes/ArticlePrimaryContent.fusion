@@ -4,7 +4,7 @@ prototype(Neos.Neos:PrimaryContent).Article {
 	type = 'UpAssist.Neos.News:Article'
 }
 
-prototype(UpAssist.Neos.News:Article) {
+prototype(UpAssist.Neos.News:Article) < prototype(Neos.Fusion:Template) {
 	templatePath = 'resource://UpAssist.Neos.News/Private/Templates/DocumentTypes/Article.html'
 
 	node = ${node}
