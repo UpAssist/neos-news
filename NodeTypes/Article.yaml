@@ -25,7 +25,6 @@
       search:
         elasticSearchMapping:
           type: date
-
           format: date_time_no_millis
         indexing: '${(node.properties.publicationDate ? Date.format(node.properties.publicationDate, "Y-m-d\TH:i:sP") : null)}'
   postprocessors:
