@@ -1,6 +1,6 @@
 {
     "name": "upassist-neos-news",
-    "version": "7.3.0",
+    "version": "8.0.0",
     "main": "index.js",
     "repository": "git@github.com:UpAssist/neos-news.git",
     "author": "Henjo Hoeksma <henjo@upassist.com>",
