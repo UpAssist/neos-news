@@ -19,17 +19,18 @@ prototype(UpAssist.Neos.News:Index) < prototype(Neos.Fusion:Template) {
         collection = ${q(documentNode).find('[instanceof UpAssist.Neos.News:Article]').count() ? q(documentNode).find('[instanceof UpAssist.Neos.News:Article]').sort('publicationDate', 'DESC') : null}
         itemName = 'node'
         itemRenderer = Neos.Fusion:Template {
-        templatePath = 'resource://UpAssist.Neos.News/Private/Templates/ContentTypes/Latest.html'
-        sectionName = 'item'
-        node = ${node}
-        showMoreNewsButton = TRUE
-        intro = ${String.crop(String.stripTags(q(node).find('[instanceof Neos.NodeTypes:TextMixin]').first().property('text')), 150, '&hellip;')}
+            templatePath = 'resource://UpAssist.Neos.News/Private/Templates/ContentTypes/Latest.html'
+            sectionName = 'item'
+            node = ${node}
+            showMoreNewsButton = TRUE
+            intro = ${String.crop(String.stripTags(q(node).find('[instanceof Neos.NodeTypes:TextMixin]').first().property('text')), 150, '&hellip;')}
+        }
     }
 
     @process.wrap = ${'<ul class="news-items">' + value + '</ul>'}
 
     @cache.entryTags {
-        1 = ${Neos.Caching.nodeTypeTag('', node)} + UpAssist.Neos.News:Article}
+        1 = ${Neos.Caching.nodeTypeTag('UpAssist.Neos.News:Article', node)}
     }
 
     archiveMenu = Neos.Neos:Menu {
