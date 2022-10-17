@@ -29,7 +29,7 @@ prototype(UpAssist.Neos.News:Latest) < prototype(Neos.Fusion:Template) {
             1 = ${node.identifier}
         }
         entryTags {
-            1 = 'NodeType_UpAssist.Neos.News:Article'
+            1 = ${Neos.Caching.nodeTypeTag('UpAssist.Neos.News:Article', node)}
         }
     }
 }

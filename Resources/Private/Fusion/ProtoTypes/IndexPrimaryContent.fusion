@@ -29,7 +29,7 @@ prototype(UpAssist.Neos.News:Index) < prototype(Neos.Fusion:Template) {
     @process.wrap = ${'<ul class="news-items">' + value + '</ul>'}
 
     @cache.entryTags {
-        1 = ${'NodeType_' + UpAssist.Neos.News:Article}
+        1 = ${Neos.Caching.nodeTypeTag('', node)} + UpAssist.Neos.News:Article}
     }
 
     archiveMenu = Neos.Neos:Menu {
